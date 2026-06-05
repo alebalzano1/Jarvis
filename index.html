@@ -1878,6 +1878,40 @@
       font-size: 12px;
       margin-left: 1px;
     }
+
+    /* Ajustes responsivos para celulares */
+    @media (max-width: 600px) {
+      /* Los formularios de dos columnas pasan a una sola columna */
+      .fr {
+        grid-template-columns: 1fr !important;
+      }
+      
+      /* Reducir padding lateral en celulares */
+      .tc {
+        padding: 12px !important;
+      }
+      
+      /* Adaptar la grilla de 5 proveedores de IA a 3 columnas */
+      #api-modal .modal div[style*="grid-template-columns"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+      }
+      
+      /* El sidebar actúa como un drawer flotante en celulares para no achicar la pantalla de chat */
+      #sb {
+        position: fixed;
+        top: 48px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        height: calc(100vh - 48px);
+      }
+      
+      #sb:not(.closed) {
+        width: 240px;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+      }
+    }
   </style>
 </head>
 
